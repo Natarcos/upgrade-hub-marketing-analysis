@@ -447,7 +447,7 @@ if df is not None and not df.empty:
                     porcentaje_ganancia_campaña,
                     values='Porcentaje de Ganancia',
                     names='type',
-                    title='Distribución de la ganancia por tipo de campaña',
+                    title='Ganancia por tipo de campaña',
                     color='type',
                     color_discrete_map=colores_campañas
                 )
@@ -469,7 +469,7 @@ if df is not None and not df.empty:
                 size="revenue",
                 hover_data=['campaign_name'],
                 color_discrete_map=colores_campañas,
-                title="Relación entre gasto y ganancia por tipo de campaña",
+                title="Gasto y ganancia por tipo de campaña",
                 labels={"budget": "Gasto (€)", "revenue": "Ganancia (€)", "type": "Tipo de Campaña"},
                 log_x=True
             )
@@ -513,7 +513,7 @@ if df is not None and not df.empty:
                     x='type',
                     y='conversion_rate',
                     color='type',
-                    title='Distribución de la Tasa de Conversión por Tipo de Campaña',
+                    title='Tasa de Conversión por Tipo de Campaña',
                     color_discrete_map=colores_campañas
                 )
                 fig_conversion_campaña.update_layout(title_text='Distribución de la Tasa de Conversión por Tipo de Campaña', title_x=0.0)
@@ -544,7 +544,7 @@ if df is not None and not df.empty:
                 size="revenue",
                 hover_data=['campaign_name'],
                 color_discrete_map= colores_campañas,
-                title="Relación entre Gasto y ROI por Tipo de Campaña",
+                title="Gasto y ROI por Tipo de Campaña",
                 labels={"budget": "Gasto", "roi": "ROI", "type": "Tipo de Campaña"},
                 log_x=True
             )
@@ -567,7 +567,7 @@ if df is not None and not df.empty:
                 size="revenue",
                 hover_data=['campaign_name'],
                 color_discrete_map= colores_campañas,
-                title="Relación entre Gasto y Conversión por Tipo de Campaña",
+                title="Gasto y Conversión por Tipo de Campaña",
                 labels={"budget": "Gasto", "conversion_rate": "Tasa de conversión", "type": "Tipo de Campaña"},
                 log_x=True
             )
@@ -652,7 +652,7 @@ if df is not None and not df.empty:
                     porcentaje_ganancia_canal,
                     values='Porcentaje de Ganancia',
                     names='channel',
-                    title='Distribución de la ganancia por canal',
+                    title='Ganancia por canal',
                     color='channel',
                     color_discrete_map=colores_canales
                 )
@@ -665,7 +665,7 @@ if df is not None and not df.empty:
                 st.plotly_chart(fig_ganancia_canal, use_container_width=True, key="fig_ganancia_canal")
 
             st.markdown("---")
-            st.subheader("Relación entre gasto y ganancia por canal")
+            st.subheader("Gasto y ganancia por canal")
             fig_gasto_ganancia_canal = px.scatter(
                 df,
                 x="budget",
@@ -674,7 +674,7 @@ if df is not None and not df.empty:
                 size="revenue",
                 hover_data=['campaign_name'],
                 color_discrete_map=colores_canales,
-                title="Relación entre gasto y ganancia por canal",
+                title="Gasto y ganancia por canal",
                 labels={"budget": "Gasto (€)", "revenue": "Ganancia (€)", "channel": "Canal"},
                 log_x=True
             )
@@ -719,7 +719,7 @@ if df is not None and not df.empty:
                     title='Tasa de Conversión por Canal',
                     color_discrete_map=colores_canales
                 )
-                fig_conversion_canal.update_layout(title_text='Distribución de la Tasa de Conversión por Canal', title_x=0.0)
+                fig_conversion_canal.update_layout(title_text='Tasa de Conversión por Canal', title_x=0.0)
                 st.plotly_chart(fig_conversion_canal, use_container_width=True, key="fig_conversion_canal")
             
             with col3:
@@ -768,7 +768,7 @@ if df is not None and not df.empty:
                 size="revenue",
                 hover_data=['campaign_name'],
                 color_discrete_map= colores_canales,
-                title="Relación entre Gasto y Conversión por Canal",
+                title="Gasto y Conversión por Canal",
                 labels={"budget": "Gasto", "conversion_rate": "Tasa de conversión", "channel": "Canal"},
                 log_x=True
             )
