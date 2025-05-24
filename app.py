@@ -357,10 +357,16 @@ if df is not None and not df.empty:
                 st.plotly_chart(fig_conversion_meses, use_container_width=True)
                 
     st.subheader("Campañas destacadas en julio 2023")    
-    #encontrar campañas realizadas en julio
-    campañas_julio = df[df['start_date'].str.contains('2023-07')]
-    campañas_julio_seleccionado = campañas_julio[['campaign_name', 'start_date', 'budget', 'revenue', 'roi', 'conversion_rate']]
-    st.dataframe(campañas_julio_seleccionado)
+    # encontrar campañas realizadas en julio
+    if df is not None:
+        campañas_julio = df[df['start_date'].str.contains('2023-07')]
+        if not campañas_julio.empty:
+            campañas_julio_seleccionado = campañas_julio[['campaign_name', 'start_date', 'budget', 'revenue', 'roi', 'conversion_rate']].copy()
+            st.dataframe(campañas_julio_seleccionado)
+        else:
+            st.write("No hay campañas en julio de 2023 con los filtros actuales.")
+    else:
+        st.write("El DataFrame 'df' no está disponible.")
         
 
     #------------------ 2. Tipo de Campaña -----------------
