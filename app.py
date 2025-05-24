@@ -192,17 +192,18 @@ if df is not None and not df.empty:
                 x='type',
                 y='budget',
                 color='channel',
+                title='Resumen Gasto',
                 box=True,
                 points='all',
                 labels={'type': 'Tipo de Campaña', 'budget': 'Gasto (€)', 'channel': 'Canal'},
                 color_discrete_map=colores_canales
             )
             fig_gasto.update_layout(
-                margin=dict(l=20, r=20, t=40, b=20),
-                legend_title_text='Canal',
-                font=dict(size=13),
-                title_font=dict(size=16),
-                title_x=0.5
+            margin=dict(l=40, r=20, t=20, b=40),
+            legend_title_text='Canal',
+            font=dict(size=13),
+            title_font=dict(size=16),
+            title_x=0.0  # Centrar el título
             )
             st.plotly_chart(fig_gasto, use_container_width=True)
 
@@ -213,6 +214,7 @@ if df is not None and not df.empty:
                 x='type',
                 y='revenue',
                 color='channel',
+                title='Resumen Ganancia',
                 box=True,
                 points='all',
                 labels={'type': 'Tipo de Campaña', 'revenue': 'Ganancia (€)', 'channel': 'Canal'},
@@ -223,7 +225,7 @@ if df is not None and not df.empty:
                 legend_title_text='Canal',
                 font=dict(size=13),
                 title_font=dict(size=16),
-                title_x=0.5
+                title_x=0.0
             )
             st.plotly_chart(fig_ganancia, use_container_width=True)
 
@@ -236,6 +238,7 @@ if df is not None and not df.empty:
                 x='type',
                 y='roi',
                 color='channel',
+                title='Resumen Roi',
                 box=True,
                 points='all',
                 labels={'type': 'Tipo de Campaña', 'roi': 'ROI', 'channel': 'Canal'},
@@ -246,7 +249,7 @@ if df is not None and not df.empty:
                 legend_title_text='Canal',
                 font=dict(size=13),
                 title_font=dict(size=16),
-                title_x=0.5
+                title_x=0.0
             )
             st.plotly_chart(fig_roi, use_container_width=True)
 
@@ -257,6 +260,7 @@ if df is not None and not df.empty:
                 x='type',
                 y='conversion_rate',
                 color='channel',
+                title='Resumen Conversión',
                 box=True,
                 points='all',
                 labels={'type': 'Tipo de Campaña', 'conversion_rate': 'Tasa de Conversión', 'channel': 'Canal'},
@@ -267,7 +271,7 @@ if df is not None and not df.empty:
                 legend_title_text='Canal',
                 font=dict(size=13),
                 title_font=dict(size=16),
-                title_x=0.5
+                title_x=0.0
             )
             st.plotly_chart(fig_conversion, use_container_width=True)
 
@@ -296,7 +300,7 @@ if df is not None and not df.empty:
                     margin=dict(l=20, r=20, t=40, b=20),
                     font=dict(size=13),
                     title_font=dict(size=16),
-                    title_x=0.5
+                    title_x=0.0
                 )
                 st.plotly_chart(fig_gasto_meses, use_container_width=True)
 
@@ -313,7 +317,7 @@ if df is not None and not df.empty:
                     margin=dict(l=20, r=20, t=40, b=20),
                     font=dict(size=13),
                     title_font=dict(size=16),
-                    title_x=0.5
+                    title_x=0.0
                 )
                 st.plotly_chart(fig_beneficio_meses, use_container_width=True)
 
@@ -331,7 +335,7 @@ if df is not None and not df.empty:
                     margin=dict(l=20, r=20, t=40, b=20),
                     font=dict(size=13),
                     title_font=dict(size=16),
-                    title_x=0.5
+                    title_x=0.0
                 )
                 st.plotly_chart(fig_roi_meses, use_container_width=True)
 
@@ -348,7 +352,7 @@ if df is not None and not df.empty:
                     margin=dict(l=20, r=20, t=40, b=20),
                     font=dict(size=13),
                     title_font=dict(size=16),
-                    title_x=0.5
+                    title_x=0.0
                 )
                 st.plotly_chart(fig_conversion_meses, use_container_width=True)
 
@@ -356,7 +360,23 @@ if df is not None and not df.empty:
     with pestañas_principales[1]:
         st.markdown("### 🏠 Análisis por tipo de campaña")
         st.markdown("Compara el rendimiento de cada tipo de campaña en los principales KPIs.")
+        
+        st.subheader("¿Qué tipo de campaña se usa más?")
+        #gráfica de barras que muestre el uso de los diferentes tipos de campaña
+        fig_uso_campañas = px.bar(
+            df['type'].value_counts().reset_index(),
+            x='count',
+            y='type',
+            title='Uso de tipos de campañas',
+            labels={'index': 'type', 'type': 'Número de Campañas'},
+            color='type',
+            color_discrete_map=colores_campañas
+        )
+        fig_uso_campañas.update_layout(title_text='Uso de Tipos de campaña', title_x=0.0)
+        st.plotly_chart(fig_uso_campañas, use_container_width=True)
+        
 
+        st.subheader("¿Qué tipo de campaña es más efectiva?")
         col1, col2, col3 = st.columns(3)
         with col1:
             st.metric("Campaña con más conversión", 
@@ -394,7 +414,7 @@ if df is not None and not df.empty:
                 fig_gasto_campaña.update_traces(textposition='inside', textinfo='percent+label')
                 fig_gasto_campaña.update_layout(
                     margin=dict(l=20, r=20, t=40, b=20),
-                    title_x=0.5,
+                    title_x=0.0,
                     font=dict(size=13)
                 )
                 st.plotly_chart(fig_gasto_campaña, use_container_width=True)
@@ -416,7 +436,7 @@ if df is not None and not df.empty:
                 fig_ganancia_campaña.update_traces(textposition='inside', textinfo='percent+label')
                 fig_ganancia_campaña.update_layout(
                     margin=dict(l=20, r=20, t=40, b=20),
-                    title_x=0.5,
+                    title_x=0.0,
                     font=dict(size=13)
                 )
                 st.plotly_chart(fig_ganancia_campaña, use_container_width=True)
@@ -442,7 +462,7 @@ if df is not None and not df.empty:
                 legend_title="Tipo de Campaña",
                 font=dict(size=13),
                 title_font=dict(size=16),
-                title_x=0.5
+                title_x=0.0
             )
             st.plotly_chart(fig_gasto_ganancia_campaña, use_container_width=True)
 
@@ -463,7 +483,7 @@ if df is not None and not df.empty:
                     margin=dict(l=20, r=20, t=40, b=20),
                     font=dict(size=13),
                     title_font=dict(size=16),
-                    title_x=0.5,
+                    title_x=0.0,
                     showlegend=False
                 )
                 st.plotly_chart(fig_roi_campaña, use_container_width=True)
@@ -478,7 +498,7 @@ if df is not None and not df.empty:
                     title='Distribución de la Tasa de Conversión por Tipo de Campaña',
                     color_discrete_map=colores_campañas
                 )
-                fig_conversion_campaña.update_layout(title_text='Distribución de la Tasa de Conversión por Tipo de Campaña', title_x=0.5)
+                fig_conversion_campaña.update_layout(title_text='Distribución de la Tasa de Conversión por Tipo de Campaña', title_x=0.0)
                 st.plotly_chart(fig_conversion_campaña, use_container_width=True)
             
             with col3:
@@ -491,7 +511,7 @@ if df is not None and not df.empty:
                     color='type',
                     color_discrete_map=colores_campañas
                 )
-                fig_beneficio_campaña.update_layout(title_text='Beneficio Neto por Tipo de Campaña', title_x=0.5)
+                fig_beneficio_campaña.update_layout(title_text='Beneficio Neto por Tipo de Campaña', title_x=0.0)
                 st.plotly_chart(fig_beneficio_campaña, use_container_width=True)
         
         #Relacion gasto con kpis
@@ -511,7 +531,7 @@ if df is not None and not df.empty:
                 log_x=True
             )
             fig_gasto_roi_camapaña.update_layout(
-                title_x=0.5,
+                title_x=0.0,
                 xaxis_title="Gasto (escala log)",
                 yaxis_title="ROI",
                 legend_title="Campaña",
@@ -534,7 +554,7 @@ if df is not None and not df.empty:
                 log_x=True
             )
             fig_gasto_conversion_campaña.update_layout(
-                title_x=0.5,
+                title_x=0.0,
                 xaxis_title="Gasto (escala log)",
                 yaxis_title="Conversión",
                 legend_title="Campaña",
@@ -546,7 +566,22 @@ if df is not None and not df.empty:
     with pestañas_principales[2]:
         st.markdown("### 🪂 Análisis por canal")
         st.markdown("Compara el rendimiento de cada canal en los principales KPIs.")
-
+        
+        st.subheader("¿Qué tipo canal se usa más?")
+        #gráfica de barras que muestre el uso de los diferentes canales
+        fig_uso_canales = px.bar(
+            df['channel'].value_counts().reset_index(),
+            x='count',
+            y='channel',
+            title='Uso de los Canales de Marketing',
+            labels={'index': 'Canal', 'channel': 'Número de Campañas'},
+            color='channel',
+            color_discrete_map=colores_canales
+        )
+        fig_uso_canales.update_layout(title_text='Uso de los Canales de Marketing', title_x=0.0)
+        st.plotly_chart(fig_uso_canales, use_container_width=True)
+        
+        st.subheader("¿Qué tipo canal es más efectivo?")
         col1, col2, col3 = st.columns(3)
         with col1:
             st.metric("Canal con más conversión", 
@@ -584,7 +619,7 @@ if df is not None and not df.empty:
                 fig_gasto_canal.update_traces(textposition='inside', textinfo='percent+label')
                 fig_gasto_canal.update_layout(
                     margin=dict(l=20, r=20, t=40, b=20),
-                    title_x=0.5,
+                    title_x=0.0,
                     font=dict(size=13)
                 )
                 st.plotly_chart(fig_gasto_canal, use_container_width=True, key="fig_gasto_canal")
@@ -606,7 +641,7 @@ if df is not None and not df.empty:
                 fig_ganancia_canal.update_traces(textposition='inside', textinfo='percent+label')
                 fig_ganancia_canal.update_layout(
                     margin=dict(l=20, r=20, t=40, b=20),
-                    title_x=0.5,
+                    title_x=0.0,
                     font=dict(size=13)
                 )
                 st.plotly_chart(fig_ganancia_canal, use_container_width=True, key="fig_ganancia_canal")
@@ -632,7 +667,7 @@ if df is not None and not df.empty:
                 legend_title="Canal",
                 font=dict(size=13),
                 title_font=dict(size=16),
-                title_x=0.5
+                title_x=0.0
             )
             st.plotly_chart(fig_gasto_ganancia_canal, use_container_width=True, key="fig_gasto_ganancia_canal")
 
@@ -652,7 +687,7 @@ if df is not None and not df.empty:
                     margin=dict(l=20, r=20, t=40, b=20),
                     font=dict(size=13),
                     title_font=dict(size=16),
-                    title_x=0.5,
+                    title_x=0.0,
                     showlegend=False
                 )
                 st.plotly_chart(fig_roi_canal, use_container_width=True, key="fig_roi_canal")
@@ -663,10 +698,10 @@ if df is not None and not df.empty:
                     x='channel',
                     y='conversion_rate',
                     color='channel',
-                    title='Distribución de la Tasa de Conversión por Canal',
+                    title='Tasa de Conversión por Canal',
                     color_discrete_map=colores_canales
                 )
-                fig_conversion_canal.update_layout(title_text='Distribución de la Tasa de Conversión por Canal', title_x=0.5)
+                fig_conversion_canal.update_layout(title_text='Distribución de la Tasa de Conversión por Canal', title_x=0.0)
                 st.plotly_chart(fig_conversion_canal, use_container_width=True, key="fig_conversion_canal")
             
             with col3:
@@ -678,7 +713,7 @@ if df is not None and not df.empty:
                     color='channel',
                     color_discrete_map=colores_canales
                 )
-                fig_beneficio_canal.update_layout(title_text='Beneficio Neto por Canal', title_x=0.5)
+                fig_beneficio_canal.update_layout(title_text='Beneficio Neto por Canal', title_x=0.0)
                 st.plotly_chart(fig_beneficio_canal, use_container_width=True, key="fig_beneficio_canal")
         
         col_kpis1, col_kpis2 = st.columns(2)
@@ -697,7 +732,7 @@ if df is not None and not df.empty:
                 log_x=True
             )
             fig_gasto_roi_canal.update_layout(
-                title_x=0.5,
+                title_x=0.0,
                 xaxis_title="Gasto (escala log)",
                 yaxis_title="ROI",
                 legend_title="Canal",
@@ -720,7 +755,7 @@ if df is not None and not df.empty:
                 log_x=True
             )
             fig_gasto_conversion.update_layout(
-                title_x=0.5,
+                title_x=0.0,
                 xaxis_title="Gasto (escala log)",
                 yaxis_title="Conversión",
                 legend_title="Canal",
@@ -742,6 +777,8 @@ if df is not None and not df.empty:
             st.metric("Porcentaje campañas B2C", f"{b2c}%")
         with col3:
             st.metric("Total campañas", df.shape[0])
+        
+        st.markdown("---")
             
         col_tar1, col_tar2, col_tar3, col_tar4 = st.columns(4)
         with col_tar1:
@@ -759,6 +796,7 @@ if df is not None and not df.empty:
                 
         st.markdown("---")
         col1, col2 = st.columns(2)
+        st.subheader("Distrubusión del Roi por tipo de audiencia")
         with col1:
             fig_roi_target = px.violin(
                 df,
@@ -767,11 +805,11 @@ if df is not None and not df.empty:
                 color='target_audience',
                 box=True,
                 points='all',
-                title='Distribución del ROI por Audiencia Objetivo',
+                title='ROI por Audiencia Objetivo',
                 labels={'target_audience': 'Audiencia Objetivo', 'roi': 'ROI'},
                 color_discrete_map=colores_target
             )
-            fig_roi_target.update_layout(title_text='Distribución del ROI por Audiencia Objetivo', title_x=0.5)
+            fig_roi_target.update_layout(title_text='Distribución del ROI por Audiencia Objetivo', title_x=0.0)
             st.plotly_chart(fig_roi_target, use_container_width=True)
         
         with col2:
@@ -785,7 +823,7 @@ if df is not None and not df.empty:
                 labels={'target_audience': 'Audiencia Objetivo', 'conversion_rate': 'Tasa de Conversión'},
                 color_discrete_map=colores_target
             )
-            fig_conversion_target.update_layout(title_text='Distribución de la Tasa de Conversión por Audiencia Objetivo', title_x=0.5)
+            fig_conversion_target.update_layout(title_text='Distribución de la Tasa de Conversión por Audiencia Objetivo', title_x=0.0)
             st.plotly_chart(fig_conversion_target, use_container_width=True)
         st.markdown("---")
         
@@ -802,9 +840,10 @@ if df is not None and not df.empty:
             log_x=True,
             log_y=True
         )
-        fig_gasto_ganancia_target.update_layout(title_text='Relación entre Gasto y Ganancia por Audiencia Objetivo (Escala Logarítmica)', title_x=0.5)
+        fig_gasto_ganancia_target.update_layout(title_text='Relación entre Gasto y Ganancia por Audiencia Objetivo (Escala Logarítmica)', title_x=0.0)
         st.plotly_chart(fig_gasto_ganancia_target, use_container_width=True)
         
+        st.subheader("Relación entre Gasto y Tasa de Conversión por Audiencia Objetivo")
         fig_gasto_conversion_target = px.scatter(
             df,
             x='budget',
@@ -812,12 +851,32 @@ if df is not None and not df.empty:
             color='target_audience',
             size='conversion_rate',
             size_max=40,
-            title='Relación entre Gasto y Tasa de Conversión por Audiencia Objetivo (Escala Logarítmica)',
+            title=' Gasto y Tasa de Conversión por Audiencia (Escala Logarítmica)',
             labels={'budget': 'Gasto', 'conversion_rate': 'Tasa de Conversión'},
             color_discrete_map=colores_target,
             log_x=True
         )
-        fig_gasto_conversion_target.update_layout(title_text='Relación entre Gasto y Tasa de Conversión por Audiencia Objetivo (Escala Logarítmica)', title_x=0.5)
+        fig_gasto_conversion_target.update_layout(title_text='Relación entre Gasto y Tasa de Conversión por Audiencia Objetivo (Escala Logarítmica)', title_x=0.0)
         st.plotly_chart(fig_gasto_conversion_target, use_container_width=True)
+        
+    #------------------ 5. Mejores Campañas -----------------
+    with pestañas_principales[4]:
+        st.markdown("### 💟 Mejores Campañas")
+        st.markdown("Conozcamos las características concretas de las campañas con mejores resultados. .")
+
+        col1, col2, col3, col4 = st.columns(4)
+        with col1:
+            st.markdown(f"<p style='font-size: 0.8em;'>Campaña con más gasto: <br><strong>{df_filtrado.loc[df_filtrado['budget'].idxmax()]['campaign_name']}</strong></p>", unsafe_allow_html=True)
+        with col2:
+            st.markdown(f"<p style='font-size: 0.8em;'>Campaña con más ROI: <br><strong>{df_filtrado.loc[df_filtrado['roi'].idxmax()]['campaign_name']}</strong></p>", unsafe_allow_html=True)
+        with col3:
+            st.markdown(f"<p style='font-size: 0.8em;'>Campaña con más conversión: <br><strong>{df_filtrado.loc[df_filtrado['conversion_rate'].idxmax()]['campaign_name']}</strong></p>", unsafe_allow_html=True)
+        with col4:
+            st.markdown(f"<p style='font-size: 0.8em;'>Campaña con más beneficio neto: <br><strong>{df_filtrado.loc[df_filtrado['beneficio_neto'].idxmax()]['campaign_name']}</strong></p>", unsafe_allow_html=True)
+        st.markdown("---")
+        st.subheader("Características de las mejores campañas")
+        st.markdown("A continuación, se presentan las campañas con los mejores resultados en términos de ROI, conversión y beneficio neto.")
+        fila = df[df['campaign_name'].isin(['Outlier Budget','Realigned radical hardware','Persevering zero administration interface', 'too manu conversions', 'Advanced systematic complexity'])]
+        st.dataframe(fila)
         
 # El resto de pestañas se pueden mejorar siguiendo el mismo patrón.
