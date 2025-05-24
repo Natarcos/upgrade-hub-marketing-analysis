@@ -53,7 +53,7 @@ Este repositorio contiene el código y los recursos necesarios para analizar y v
 
 Accede a la app de Streamlit para explorar los resultados de forma interactiva:
 
-
+https://upgrade-app-marketing-analysis-natalia-arcos.streamlit.app/
 
 ---
 
