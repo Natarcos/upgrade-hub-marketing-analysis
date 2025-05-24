@@ -359,8 +359,8 @@ if df is not None and not df.empty:
     st.subheader("Campañas destacadas en julio 2023")    
     #encontrar campañas realizadas en julio
     campañas_julio = df[df['start_date'].str.contains('2023-07')]
-    campañas_julio[['campaign_name', 'start_date', 'budget', 'revenue', 'roi', 'conversion_rate']]
-    st.dataframe(campañas_julio)
+    campañas_julio_seleccionado = campañas_julio[['campaign_name', 'start_date', 'budget', 'revenue', 'roi', 'conversion_rate']]
+    st.dataframe(campañas_julio_seleccionado)
         
 
     #------------------ 2. Tipo de Campaña -----------------
