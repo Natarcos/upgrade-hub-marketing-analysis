@@ -46,7 +46,7 @@ df = None
 @st.cache_data(ttl=3600)
 def cargar_datos():
     try:
-        df = pd.read_csv('pre-marketing.csv')
+        df = pd.read_csv('Preprocesamiento/pre-marketing.csv')
         return df
     except Exception as e:
         st.error(f"Error al cargar los datos: {e}")
