@@ -355,6 +355,13 @@ if df is not None and not df.empty:
                     title_x=0.0
                 )
                 st.plotly_chart(fig_conversion_meses, use_container_width=True)
+                
+    st.subheader("Campañas destacadas en julio 2023")    
+    #encontrar campañas realizadas en julio
+    campañas_julio = df[df['start_date'].str.contains('2023-07')]
+    campañas_julio[['campaign_name', 'start_date', 'budget', 'revenue', 'roi', 'conversion_rate']]
+    st.dataframe(campañas_julio)
+        
 
     #------------------ 2. Tipo de Campaña -----------------
     with pestañas_principales[1]:
@@ -879,4 +886,3 @@ if df is not None and not df.empty:
         fila = df[df['campaign_name'].isin(['Outlier Budget','Realigned radical hardware','Persevering zero administration interface', 'too manu conversions', 'Advanced systematic complexity'])]
         st.dataframe(fila)
         
-# El resto de pestañas se pueden mejorar siguiendo el mismo patrón.
