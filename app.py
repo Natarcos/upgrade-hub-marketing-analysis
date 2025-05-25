@@ -898,115 +898,132 @@ if df is not None and not df.empty:
         fila = df[df['campaign_name'].isin(['Outlier Budget','Realigned radical hardware','Persevering zero administration interface', 'too manu conversions', 'Advanced systematic complexity'])]
         st.dataframe(fila)
 
-#------------------ 6. Resumen -----------------
-    with pestañas_principales[5]:
+#------------------ 6. Conclusiones -----------------
+with pestañas_principales[5]:
     st.markdown("### 📊 CONCLUSIONES EJECUTIVAS Y RECOMENDACIONES ESTRATÉGICAS")
     st.markdown("""
-<div style="font-size:1.1rem; color:#444;">
-**Período analizado:** Últimos 2 años de actividad  
-**Métricas clave evaluadas:** Gasto, Ganancia, ROI, Tasa de Conversión, Beneficio Neto  
-**Dimensiones de análisis:** Tipo de campaña, Canal de distribución, Audiencia objetivo  
-**Enfoque:** Dashboard interactivo con capacidad de filtrado temporal y segmentación  
-</div>
----
-#### 🏆 **HALLAZGOS PRINCIPALES**
-
-**Diversificación de Estrategias:**  
-- 7 tipos de campañas activas: redes sociales, webinar, email, podcast, B2B, evento, y "Desconocido".
-- 5 canales principales: Referral, Unknown, orgánico, pagado, promoción.
-- 2 audiencias objetivo: B2B y B2C.
-
-**Patrones Temporales Identificados:**  
-- Estacionalidad: Pico de actividad en julio 2023.
-- Evolución mensual de métricas clave con tendencias identificables.
-- Variabilidad temporal en gasto medio, ROI y tasas de conversión.
-
-**Campañas de Alto Rendimiento:**  
-- "Outlier Budget" - Mayor gasto.
-- "Realigned radical hardware" - Alto ROI.
-- "Persevering zero administration interface" - Mejor conversión.
-- "Advanced systematic complexity" - Mayor beneficio neto.
-
----
-#### 📈 **ANÁLISIS POR DIMENSIONES**
-
-**Tipos de Campaña:**  
-- Email: Consistentemente efectivo en conversión.
-- Redes Sociales: Mayor volumen, ROI variable.
-- Webinars: Alto engagement, ROI superior.
-- Podcasts: Buenos resultados B2B.
-- Concentración del gasto en redes sociales.
-
-- **Canales de Distribución:**  
-- Orgánico: Mejor relación costo-beneficio.
-- Pagado: Mayor volumen, ROI moderado.
-- Referral: Conversiones de alta calidad.
-- Unknown: Requiere mejor tracking y atribución.
-- Desequilibrio en asignación presupuestaria.
-
-- **Segmentación de Audiencia:**  
-- B2B: Ciclos más largos, mayor valor por conversión.
-- B2C: Mayor volumen, conversiones más rápidas.
-- ROI diferenciado por segmento.
-
----
-#### 💡 **INSIGHTS CRÍTICOS**
-
-- No linealidad entre inversión y retorno.
-- Punto de saturación en ciertas campañas.
-- Estacionalidad: Julio 2023, alta actividad.
-- Gap en clasificación y tracking ("Desconocido", "Unknown").
-- Desalineación estratégica canal-tipo de campaña.
-- B2B genera mayor ROI, B2C mayor volumen.
-- Concentración de beneficios en un 20% de las campañas (Principio de Pareto).
-- Tasa de conversión inversamente proporcional al tamaño de la audiencia en algunos casos.
-- Canales saturados muestran ROI decreciente.
-
----
-#### 📝 **RECOMENDACIONES ESTRATÉGICAS**
-
-**Corto Plazo (1-3 meses):**
-- Reclasificación de campañas "Desconocido".
-- Mejor tracking para canal "Unknown".
-- Análisis profundo de campañas outlier de julio 2023.
-- Optimización presupuestaria hacia canales de mayor ROI.
-
-**Mediano Plazo (3-6 meses):**
-- Rebalanceo de portfolio de tipos de campaña.
-- Estrategias diferenciadas B2B vs B2C.
-- Modelo predictivo para campañas de alto potencial.
-- Dashboard en tiempo real.
-
-**Largo Plazo (6-12 meses):**
-- Integración de datos de múltiples fuentes.
-- Automatización de optimización presupuestaria.
-- Desarrollo de benchmarks industriales.
-- Testing A/B sistemático.
-
----
-#### 📊 **MÉTRICAS DE SEGUIMIENTO**
-
-- ROI promedio por tipo de campaña.
-- Costo por conversión por canal.
-- Beneficio neto mensual.
-- Eficiencia presupuestaria.
-
-**Indicadores de Alerta:**
-- Campañas con ROI < 1.0.
-- Canales con tendencia decreciente en conversión.
-- Desbalance presupuestario > 70% en un solo canal.
-- Campañas sin clasificación > 5% del total.
-
----
-#### 🚀 **PRÓXIMOS PASOS**
-
-- Deep-dive en campañas de alto rendimiento.
-- Workshop de optimización presupuestaria.
-- Mejoras en tracking y atribución.
-- Casos de uso específicos por vertical.
-
----
-<div style="font-size:1.05rem; color:#444;">
-Dashboard desarrollado con capacidades de filtrado temporal, segmentación multidimensional y visualizaciones interactivas para facilitar la toma de decisiones basada en datos.
-</div>
-""", unsafe_allow_html=True)
+    <div style="font-size:1.1rem; color:#444;">
+    <b>Período analizado:</b> Últimos 2 años de actividad<br>
+    <b>Métricas clave evaluadas:</b> Gasto, Ganancia, ROI, Tasa de Conversión, Beneficio Neto<br>
+    <b>Dimensiones de análisis:</b> Tipo de campaña, Canal de distribución, Audiencia objetivo<br>
+    <b>Enfoque:</b> Dashboard interactivo con capacidad de filtrado temporal y segmentación
+    </div>
+    <hr>
+    <h4>🏆 <b>HALLAZGOS PRINCIPALES</b></h4>
+    <ul>
+    <li><b>Diversificación de Estrategias:</b>
+        <ul>
+            <li>7 tipos de campañas activas: redes sociales, webinar, email, podcast, B2B, evento, y "Desconocido".</li>
+            <li>5 canales principales: Referral, Unknown, orgánico, pagado, promoción.</li>
+            <li>2 audiencias objetivo: B2B y B2C.</li>
+        </ul>
+    </li>
+    <li><b>Patrones Temporales Identificados:</b>
+        <ul>
+            <li>Estacionalidad: Pico de actividad en julio 2023.</li>
+            <li>Evolución mensual de métricas clave con tendencias identificables.</li>
+            <li>Variabilidad temporal en gasto medio, ROI y tasas de conversión.</li>
+        </ul>
+    </li>
+    <li><b>Campañas de Alto Rendimiento:</b>
+        <ul>
+            <li>"Outlier Budget" - Mayor gasto.</li>
+            <li>"Realigned radical hardware" - Alto ROI.</li>
+            <li>"Persevering zero administration interface" - Mejor conversión.</li>
+            <li>"Advanced systematic complexity" - Mayor beneficio neto.</li>
+        </ul>
+    </li>
+    </ul>
+    <hr>
+    <h4>📈 <b>ANÁLISIS POR DIMENSIONES</b></h4>
+    <ul>
+    <li><b>Tipos de Campaña:</b>
+        <ul>
+            <li>Email: Consistentemente efectivo en conversión.</li>
+            <li>Redes Sociales: Mayor volumen, ROI variable.</li>
+            <li>Webinars: Alto engagement, ROI superior.</li>
+            <li>Podcasts: Buenos resultados B2B.</li>
+            <li>Concentración del gasto en redes sociales.</li>
+        </ul>
+    </li>
+    <li><b>Canales de Distribución:</b>
+        <ul>
+            <li>Orgánico: Mejor relación costo-beneficio.</li>
+            <li>Pagado: Mayor volumen, ROI moderado.</li>
+            <li>Referral: Conversiones de alta calidad.</li>
+            <li>Unknown: Requiere mejor tracking y atribución.</li>
+            <li>Desequilibrio en asignación presupuestaria.</li>
+        </ul>
+    </li>
+    <li><b>Segmentación de Audiencia:</b>
+        <ul>
+            <li>B2B: Ciclos más largos, mayor valor por conversión.</li>
+            <li>B2C: Mayor volumen, conversiones más rápidas.</li>
+            <li>ROI diferenciado por segmento.</li>
+        </ul>
+    </li>
+    </ul>
+    <hr>
+    <h4>💡 <b>INSIGHTS CRÍTICOS</b></h4>
+    <ul>
+        <li>No linealidad entre inversión y retorno.</li>
+        <li>Punto de saturación en ciertas campañas.</li>
+        <li>Estacionalidad: Julio 2023, alta actividad.</li>
+        <li>Gap en clasificación y tracking ("Desconocido", "Unknown").</li>
+        <li>Desalineación estratégica canal-tipo de campaña.</li>
+        <li>B2B genera mayor ROI, B2C mayor volumen.</li>
+        <li>Concentración de beneficios en un 20% de las campañas (Principio de Pareto).</li>
+        <li>Tasa de conversión inversamente proporcional al tamaño de la audiencia en algunos casos.</li>
+        <li>Canales saturados muestran ROI decreciente.</li>
+    </ul>
+    <hr>
+    <h4>📝 <b>RECOMENDACIONES ESTRATÉGICAS</b></h4>
+    <b>Corto Plazo (1-3 meses):</b>
+    <ul>
+        <li>Reclasificación de campañas "Desconocido".</li>
+        <li>Mejor tracking para canal "Unknown".</li>
+        <li>Análisis profundo de campañas outlier de julio 2023.</li>
+        <li>Optimización presupuestaria hacia canales de mayor ROI.</li>
+    </ul>
+    <b>Mediano Plazo (3-6 meses):</b>
+    <ul>
+        <li>Rebalanceo de portfolio de tipos de campaña.</li>
+        <li>Estrategias diferenciadas B2B vs B2C.</li>
+        <li>Modelo predictivo para campañas de alto potencial.</li>
+        <li>Dashboard en tiempo real.</li>
+    </ul>
+    <b>Largo Plazo (6-12 meses):</b>
+    <ul>
+        <li>Integración de datos de múltiples fuentes.</li>
+        <li>Automatización de optimización presupuestaria.</li>
+        <li>Desarrollo de benchmarks industriales.</li>
+        <li>Testing A/B sistemático.</li>
+    </ul>
+    <hr>
+    <h4>📊 <b>MÉTRICAS DE SEGUIMIENTO</b></h4>
+    <ul>
+        <li>ROI promedio por tipo de campaña.</li>
+        <li>Costo por conversión por canal.</li>
+        <li>Beneficio neto mensual.</li>
+        <li>Eficiencia presupuestaria.</li>
+    </ul>
+    <b>Indicadores de Alerta:</b>
+    <ul>
+        <li>Campañas con ROI &lt; 1.0.</li>
+        <li>Canales con tendencia decreciente en conversión.</li>
+        <li>Desbalance presupuestario &gt; 70% en un solo canal.</li>
+        <li>Campañas sin clasificación &gt; 5% del total.</li>
+    </ul>
+    <hr>
+    <h4>🚀 <b>PRÓXIMOS PASOS</b></h4>
+    <ul>
+        <li>Deep-dive en campañas de alto rendimiento.</li>
+        <li>Workshop de optimización presupuestaria.</li>
+        <li>Mejoras en tracking y atribución.</li>
+        <li>Casos de uso específicos por vertical.</li>
+    </ul>
+    <hr>
+    <div style="font-size:1.05rem; color:#444;">
+    Dashboard desarrollado con capacidades de filtrado temporal, segmentación multidimensional y visualizaciones interactivas para facilitar la toma de decisiones basada en datos.
+    </div>
+    """, unsafe_allow_html=True)
