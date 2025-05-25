@@ -900,95 +900,152 @@ if df is not None and not df.empty:
 
     #------------------ 6. Conclusiones -----------------
     with pestañas_principales[5]:
-        st.markdown("### 📊 CONCLUSIONES EJECUTIVAS Y RECOMENDACIONES ESTRATÉGICAS")
-        st.markdown("#### ANÁLISIS BIANUAL DE CAMPAÑAS DE MARKETING")
-        st.markdown("##### CONCLUSIONES EJECUTIVAS Y RECOMENDACIONES ESTRATÉGICAS")
-        st.markdown("---")
-
-        st.markdown("**RESUMEN EJECUTIVO**")
-        st.markdown("Período analizado: Últimos 2 años de actividad")
-        st.markdown("Métricas clave evaluadas: Gasto, Ganancia, ROI, Tasa de Conversión, Beneficio Neto")
-        st.markdown("Dimensiones de análisis: Tipo de campaña, Canal de distribución, Audiencia objetivo")
-        st.markdown("Enfoque: Dashboard interactivo con capacidad de filtrado temporal y segmentación")
-
-        st.markdown("**HALLAZGOS PRINCIPALES**")
-        st.markdown("Diversificación de Estrategias:")
-        st.markdown("7 tipos de campañas activas: redes sociales, webinar, email, podcast, B2B, evento, y categoría 'Desconocido'")
-        st.markdown("5 canales principales: Referral, Unknown, orgánico, pagado, promoción")
-        st.markdown("2 audiencias objetivo: B2B y B2C con distribución específica por segmento")
-        st.markdown("Patrones Temporales Identificados:")
-        st.markdown("Estacionalidad detectada: Pico de actividad en julio 2023 (campañas destacadas)")
-        st.markdown("Evolución mensual de métricas clave con tendencias identificables")
-        st.markdown("Variabilidad temporal en gasto medio, ROI y tasas de conversión")
-        st.markdown("Campañas de Alto Rendimiento:")
-        st.markdown("'Outlier Budget' - Campaña con mayor gasto")
-        st.markdown("'Realigned radical hardware' - Alto ROI")
-        st.markdown("'Persevering zero administration interface' - Mejor conversión")
-        st.markdown("'Advanced systematic complexity' - Mayor beneficio neto")
-
-        st.markdown("**ANÁLISIS POR DIMENSIONES**")
-        st.markdown("Tipos de campaña:")
-        st.markdown("Email: Consistentemente efectivo en conversión")
-        st.markdown("Redes Sociales: Mayor volumen pero ROI variable")
-        st.markdown("Webinars: Alto engagement, ROI superior")
-        st.markdown("Podcasts: Nicho especializado con buenos resultados B2B")
-        st.markdown("Concentración del gasto en campañas de redes sociales")
-        st.markdown("Oportunidades de optimización en distribución presupuestaria")
-        st.markdown("Canales de distribución:")
-        st.markdown("Orgánico: Mejor relación costo-beneficio")
-        st.markdown("Pagado: Mayor volumen, ROI moderado")
-        st.markdown("Referral: Conversiones de alta calidad")
-        st.markdown("'Unknown': Requiere mejor tracking y atribución")
-        st.markdown("Desequilibrio en asignación presupuestaria entre canales")
-        st.markdown("Potencial de rebalanceo hacia canales más eficientes")
-        st.markdown("Segmentación de audiencia:")
-        st.markdown("B2B: Ciclos más largos, mayor valor por conversión")
-        st.markdown("B2C: Mayor volumen, conversiones más rápidas")
-        st.markdown("ROI diferenciado por tipo de audiencia")
-        st.markdown("Estrategias específicas según segmento objetivo")
-
-        st.markdown("**INSIGHTS CRÍTICOS**")
-        st.markdown("No linealidad entre inversión y retorno. Punto de saturación en ciertas campañas.")
-        st.markdown("Estacionalidad: Julio 2023 destaca por alta actividad y resultados.")
-        st.markdown("Gap en clasificación y tracking para campañas/canales 'Desconocido'/'Unknown'.")
-        st.markdown("Desalineación estratégica entre canales y tipos de campaña.")
-        st.markdown("B2B genera mayor ROI pero menor volumen; B2C escalable pero márgenes más ajustados.")
-        st.markdown("20% de campañas concentran la mayoría del beneficio neto (Principio de Pareto).")
-        st.markdown("Tasa de conversión inversamente proporcional al tamaño de la audiencia en algunos casos.")
-        st.markdown("Canales saturados muestran ROI decreciente; oportunidades en canales emergentes.")
-
-        st.markdown("**RECOMENDACIONES ESTRATÉGICAS**")
-        st.markdown("Corto plazo (1-3 meses):")
-        st.markdown("Reclasificación de campañas 'Desconocido'")
-        st.markdown("Mejor tracking para canal 'Unknown'")
-        st.markdown("Análisis profundo de campañas outlier de julio 2023")
-        st.markdown("Optimización presupuestaria hacia canales de mayor ROI")
-        st.markdown("Mediano plazo (3-6 meses):")
-        st.markdown("Rebalanceo de portfolio de tipos de campaña")
-        st.markdown("Estrategias diferenciadas B2B vs B2C más definidas")
-        st.markdown("Modelo predictivo para campañas de alto potencial")
-        st.markdown("Dashboard en tiempo real para toma de decisiones ágil")
-        st.markdown("Largo plazo (6-12 meses):")
-        st.markdown("Integración de datos de múltiples fuentes")
-        st.markdown("Automatización de optimización presupuestaria")
-        st.markdown("Desarrollo de benchmarks industriales")
-        st.markdown("Implementación de testing A/B sistemático")
-
-        st.markdown("**MÉTRICAS DE SEGUIMIENTO**")
-        st.markdown("ROI promedio por tipo de campaña")
-        st.markdown("Costo por conversión por canal")
-        st.markdown("Beneficio neto mensual")
-        st.markdown("Eficiencia presupuestaria")
-        st.markdown("Indicadores de alerta:")
-        st.markdown("Campañas con ROI < 1.0")
-        st.markdown("Canales con tendencia decreciente en conversión")
-        st.markdown("Desbalance presupuestario > 70% en un solo canal")
-        st.markdown("Campañas sin clasificación > 5% del total")
-
-        st.markdown("**PRÓXIMOS PASOS**")
-        st.markdown("Sesión de deep-dive en campañas de alto rendimiento")
-        st.markdown("Workshop de optimización presupuestaria")
-        st.markdown("Mejoras en tracking y atribución")
-        st.markdown("Desarrollo de casos de uso específicos por vertical")
+        st.markdown("""
+        <h2 style="color:#636EFA;">📊 CONCLUSIONES EJECUTIVAS Y RECOMENDACIONES ESTRATÉGICAS</h2>
+        <h4 style="color:#444;">ANÁLISIS BIANUAL DE CAMPAÑAS DE MARKETING</h4>
+        <hr>
+        <div style="background-color:#f0f4fa; padding:1em; border-radius:8px;">
+            <h4 style="color:#00CC96;">🔎 RESUMEN EJECUTIVO</h4>
+            <ul>
+            <li><b>Período analizado:</b> Últimos 2 años de actividad</li>
+            <li><b>Métricas clave:</b> Gasto, Ganancia, ROI, Tasa de Conversión, Beneficio Neto</li>
+            <li><b>Dimensiones:</b> Tipo de campaña, Canal de distribución, Audiencia objetivo</li>
+            <li><b>Enfoque:</b> Dashboard interactivo con filtrado temporal y segmentación</li>
+            </ul>
+        </div>
+        <br>
+        <div style="background-color:#f8f9fa; padding:1em; border-radius:8px;">
+            <h4 style="color:#636EFA;">🌟 HALLAZGOS PRINCIPALES</h4>
+            <ul>
+            <li><b>Diversificación de Estrategias:</b>
+                <ul>
+                <li>7 tipos de campañas activas: <span style="color:#636EFA;">redes sociales</span>, <span style="color:#EF553B;">webinar</span>, <span style="color:#00CC96;">email</span>, <span style="color:#AB63FA;">podcast</span>, <span style="color:#FFA15A;">B2B</span>, evento, y <i>Desconocido</i></li>
+                <li>5 canales principales: Referral, Unknown, orgánico, pagado, promoción</li>
+                <li>2 audiencias objetivo: <b>B2B</b> y <b>B2C</b></li>
+                </ul>
+            </li>
+            <li><b>Patrones Temporales:</b>
+                <ul>
+                <li>Estacionalidad: <b style="color:#EF553B;">Pico en julio 2023</b> (campañas destacadas)</li>
+                <li>Evolución mensual de métricas clave con tendencias claras</li>
+                <li>Variabilidad temporal en gasto, ROI y conversión</li>
+                </ul>
+            </li>
+            <li><b>Campañas de Alto Rendimiento:</b>
+                <ul>
+                <li><b>Outlier Budget</b> – Mayor gasto</li>
+                <li><b>Realigned radical hardware</b> – Alto ROI</li>
+                <li><b>Persevering zero administration interface</b> – Mejor conversión</li>
+                <li><b>Advanced systematic complexity</b> – Mayor beneficio neto</li>
+                </ul>
+            </li>
+            </ul>
+        </div>
+        <br>
+        <div style="background-color:#f0f4fa; padding:1em; border-radius:8px;">
+            <h4 style="color:#00CC96;">📈 ANÁLISIS POR DIMENSIONES</h4>
+            <ul>
+            <li><b>Tipos de campaña:</b>
+                <ul>
+                <li><b>Email:</b> Consistentemente efectivo en conversión</li>
+                <li><b>Redes Sociales:</b> Mayor volumen, ROI variable</li>
+                <li><b>Webinars:</b> Alto engagement y ROI</li>
+                <li><b>Podcasts:</b> Resultados destacados en B2B</li>
+                <li>Concentración del gasto en redes sociales</li>
+                <li>Oportunidades de optimización presupuestaria</li>
+                </ul>
+            </li>
+            <li><b>Canales de distribución:</b>
+                <ul>
+                <li><b>Orgánico:</b> Mejor relación costo-beneficio</li>
+                <li><b>Pagado:</b> Mayor volumen, ROI moderado</li>
+                <li><b>Referral:</b> Conversiones de alta calidad</li>
+                <li><b>Unknown:</b> Requiere mejor tracking y atribución</li>
+                <li>Potencial de rebalanceo hacia canales eficientes</li>
+                </ul>
+            </li>
+            <li><b>Segmentación de audiencia:</b>
+                <ul>
+                <li><b>B2B:</b> Ciclos largos, mayor valor por conversión</li>
+                <li><b>B2C:</b> Mayor volumen, conversiones rápidas</li>
+                <li>ROI diferenciado por segmento</li>
+                <li>Estrategias específicas según audiencia</li>
+                </ul>
+            </li>
+            </ul>
+        </div>
+        <br>
+        <div style="background-color:#f8f9fa; padding:1em; border-radius:8px;">
+            <h4 style="color:#AB63FA;">💡 INSIGHTS CRÍTICOS</h4>
+            <ul>
+            <li>No linealidad entre inversión y retorno: <b>Punto de saturación</b> en ciertas campañas</li>
+            <li><b>Julio 2023</b> destaca por alta actividad y resultados</li>
+            <li>Gap en clasificación/tracking para campañas/canales <i>Desconocido/Unknown</i></li>
+            <li>Desalineación estratégica entre canales y tipos de campaña</li>
+            <li><b>B2B:</b> Mayor ROI, menor volumen | <b>B2C:</b> Escalable, márgenes ajustados</li>
+            <li><b>Principio de Pareto:</b> 20% de campañas concentran la mayoría del beneficio neto</li>
+            <li>Tasa de conversión inversamente proporcional al tamaño de la audiencia</li>
+            <li>Canales saturados muestran ROI decreciente; oportunidades en canales emergentes</li>
+            </ul>
+        </div>
+        <br>
+        <div style="background-color:#f0f4fa; padding:1em; border-radius:8px;">
+            <h4 style="color:#FFA15A;">🚀 RECOMENDACIONES ESTRATÉGICAS</h4>
+            <ul>
+            <li><b>Corto plazo (1-3 meses):</b>
+                <ul>
+                <li>Reclasificación de campañas <i>Desconocido</i></li>
+                <li>Mejor tracking para canal <i>Unknown</i></li>
+                <li>Análisis profundo de campañas <b>outlier</b> de julio 2023</li>
+                <li>Optimización presupuestaria hacia canales de mayor ROI</li>
+                </ul>
+            </li>
+            <li><b>Mediano plazo (3-6 meses):</b>
+                <ul>
+                <li>Rebalanceo de portfolio de tipos de campaña</li>
+                <li>Estrategias diferenciadas <b>B2B</b> vs <b>B2C</b></li>
+                <li>Modelo predictivo para campañas de alto potencial</li>
+                <li>Dashboard en tiempo real para decisiones ágiles</li>
+                </ul>
+            </li>
+            <li><b>Largo plazo (6-12 meses):</b>
+                <ul>
+                <li>Integración de datos de múltiples fuentes</li>
+                <li>Automatización de optimización presupuestaria</li>
+                <li>Desarrollo de benchmarks industriales</li>
+                <li>Implementación de testing A/B sistemático</li>
+                </ul>
+            </li>
+            </ul>
+        </div>
+        <br>
+        <div style="background-color:#f8f9fa; padding:1em; border-radius:8px;">
+            <h4 style="color:#636EFA;">📏 MÉTRICAS DE SEGUIMIENTO</h4>
+            <ul>
+            <li>ROI promedio por tipo de campaña</li>
+            <li>Costo por conversión por canal</li>
+            <li>Beneficio neto mensual</li>
+            <li>Eficiencia presupuestaria</li>
+            <li><b>Indicadores de alerta:</b>
+                <ul>
+                <li>Campañas con ROI &lt; 1.0</li>
+                <li>Canales con tendencia decreciente en conversión</li>
+                <li>Desbalance presupuestario &gt; 70% en un solo canal</li>
+                <li>Campañas sin clasificación &gt; 5% del total</li>
+                </ul>
+            </li>
+            </ul>
+        </div>
+        <br>
+        <div style="background-color:#f0f4fa; padding:1em; border-radius:8px;">
+            <h4 style="color:#00CC96;">🛠️ PRÓXIMOS PASOS</h4>
+            <ul>
+            <li>Sesión de <b>deep-dive</b> en campañas de alto rendimiento</li>
+            <li>Workshop de optimización presupuestaria</li>
+            <li>Mejoras en tracking y atribución</li>
+            <li>Desarrollo de casos de uso específicos por vertical</li>
+            </ul>
+        </div>
+        """, unsafe_allow_html=True)
 
         st.info("Dashboard desarrollado con capacidades de filtrado temporal, segmentación multidimensional y visualizaciones interactivas para facilitar la toma de decisiones basada en datos.")
