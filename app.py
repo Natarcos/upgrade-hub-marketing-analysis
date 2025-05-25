@@ -166,7 +166,7 @@ if df is not None and not df.empty:
         "🏠 Tipo de Campaña",
         "🪂 Canales",
         "👽 Audiencia", 
-        "💟 Mejores Campañas"
+        "💟 Mejores Campañas",
         "🔥 Conclusiones"
     ])
 
