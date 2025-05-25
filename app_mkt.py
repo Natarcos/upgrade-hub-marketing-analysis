@@ -815,8 +815,9 @@ if df is not None and not df.empty:
                 
         st.markdown("---")
         col1, col2 = st.columns(2)
-        st.subheader("Distrubusión del Roi por tipo de audiencia")
+        
         with col1:
+            st.subheader("Distrubusión del Roi por tipo de audiencia")
             fig_roi_target = px.violin(
                 df,
                 x='target_audience',
