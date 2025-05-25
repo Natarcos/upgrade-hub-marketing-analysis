@@ -901,10 +901,10 @@ if df is not None and not df.empty:
     #------------------ 6. Conclusiones -----------------
     with pestañas_principales[5]:
         st.markdown("""
-        <h2 style="color:#636EFA;">📊 CONCLUSIONES EJECUTIVAS Y RECOMENDACIONES ESTRATÉGICAS</h2>
-        <h4 style="color:#444;">ANÁLISIS BIANUAL DE CAMPAÑAS DE MARKETING</h4>
+        <h2 style="color:#fff;">📊 CONCLUSIONES EJECUTIVAS Y RECOMENDACIONES ESTRATÉGICAS</h2>
+        <h4 style="color:#fff;">ANÁLISIS BIANUAL DE CAMPAÑAS DE MARKETING</h4>
         <hr>
-        <div style="background-color:#f0f4fa; padding:1em; border-radius:8px;">
+        <div style="background-color:#111; padding:1em; border-radius:8px; color:#fff;">
             <h4 style="color:#00CC96;">🔎 RESUMEN EJECUTIVO</h4>
             <ul>
             <li><b>Período analizado:</b> Últimos 2 años de actividad</li>
@@ -914,68 +914,68 @@ if df is not None and not df.empty:
             </ul>
         </div>
         <br>
-        <div style="background-color:#f8f9fa; padding:1em; border-radius:8px;">
+        <div style="background-color:#222; padding:1em; border-radius:8px; color:#fff;">
             <h4 style="color:#636EFA;">🌟 HALLAZGOS PRINCIPALES</h4>
             <ul>
             <li><b>Diversificación de Estrategias:</b>
-                <ul>
-                <li>7 tipos de campañas activas: <span style="color:#636EFA;">redes sociales</span>, <span style="color:#EF553B;">webinar</span>, <span style="color:#00CC96;">email</span>, <span style="color:#AB63FA;">podcast</span>, <span style="color:#FFA15A;">B2B</span>, evento, y <i>Desconocido</i></li>
-                <li>5 canales principales: Referral, Unknown, orgánico, pagado, promoción</li>
-                <li>2 audiencias objetivo: <b>B2B</b> y <b>B2C</b></li>
-                </ul>
+            <ul>
+            <li>7 tipos de campañas activas: <span style="color:#636EFA;">redes sociales</span>, <span style="color:#EF553B;">webinar</span>, <span style="color:#00CC96;">email</span>, <span style="color:#AB63FA;">podcast</span>, <span style="color:#FFA15A;">B2B</span>, evento, y <i>Desconocido</i></li>
+            <li>5 canales principales: Referral, Unknown, orgánico, pagado, promoción</li>
+            <li>2 audiencias objetivo: <b>B2B</b> y <b>B2C</b></li>
+            </ul>
             </li>
             <li><b>Patrones Temporales:</b>
-                <ul>
-                <li>Estacionalidad: <b style="color:#EF553B;">Pico en julio 2023</b> (campañas destacadas)</li>
-                <li>Evolución mensual de métricas clave con tendencias claras</li>
-                <li>Variabilidad temporal en gasto, ROI y conversión</li>
-                </ul>
+            <ul>
+            <li>Estacionalidad: <b style="color:#EF553B;">Pico en julio 2023</b> (campañas destacadas)</li>
+            <li>Evolución mensual de métricas clave con tendencias claras</li>
+            <li>Variabilidad temporal en gasto, ROI y conversión</li>
+            </ul>
             </li>
             <li><b>Campañas de Alto Rendimiento:</b>
-                <ul>
-                <li><b>Outlier Budget</b> – Mayor gasto</li>
-                <li><b>Realigned radical hardware</b> – Alto ROI</li>
-                <li><b>Persevering zero administration interface</b> – Mejor conversión</li>
-                <li><b>Advanced systematic complexity</b> – Mayor beneficio neto</li>
-                </ul>
+            <ul>
+            <li><b>Outlier Budget</b> – Mayor gasto</li>
+            <li><b>Realigned radical hardware</b> – Alto ROI</li>
+            <li><b>Persevering zero administration interface</b> – Mejor conversión</li>
+            <li><b>Advanced systematic complexity</b> – Mayor beneficio neto</li>
+            </ul>
             </li>
             </ul>
         </div>
         <br>
-        <div style="background-color:#f0f4fa; padding:1em; border-radius:8px;">
+        <div style="background-color:#111; padding:1em; border-radius:8px; color:#fff;">
             <h4 style="color:#00CC96;">📈 ANÁLISIS POR DIMENSIONES</h4>
             <ul>
             <li><b>Tipos de campaña:</b>
-                <ul>
-                <li><b>Email:</b> Consistentemente efectivo en conversión</li>
-                <li><b>Redes Sociales:</b> Mayor volumen, ROI variable</li>
-                <li><b>Webinars:</b> Alto engagement y ROI</li>
-                <li><b>Podcasts:</b> Resultados destacados en B2B</li>
-                <li>Concentración del gasto en redes sociales</li>
-                <li>Oportunidades de optimización presupuestaria</li>
-                </ul>
+            <ul>
+            <li><b>Email:</b> Consistentemente efectivo en conversión</li>
+            <li><b>Redes Sociales:</b> Mayor volumen, ROI variable</li>
+            <li><b>Webinars:</b> Alto engagement y ROI</li>
+            <li><b>Podcasts:</b> Resultados destacados en B2B</li>
+            <li>Concentración del gasto en redes sociales</li>
+            <li>Oportunidades de optimización presupuestaria</li>
+            </ul>
             </li>
             <li><b>Canales de distribución:</b>
-                <ul>
-                <li><b>Orgánico:</b> Mejor relación costo-beneficio</li>
-                <li><b>Pagado:</b> Mayor volumen, ROI moderado</li>
-                <li><b>Referral:</b> Conversiones de alta calidad</li>
-                <li><b>Unknown:</b> Requiere mejor tracking y atribución</li>
-                <li>Potencial de rebalanceo hacia canales eficientes</li>
-                </ul>
+            <ul>
+            <li><b>Orgánico:</b> Mejor relación costo-beneficio</li>
+            <li><b>Pagado:</b> Mayor volumen, ROI moderado</li>
+            <li><b>Referral:</b> Conversiones de alta calidad</li>
+            <li><b>Unknown:</b> Requiere mejor tracking y atribución</li>
+            <li>Potencial de rebalanceo hacia canales eficientes</li>
+            </ul>
             </li>
             <li><b>Segmentación de audiencia:</b>
-                <ul>
-                <li><b>B2B:</b> Ciclos largos, mayor valor por conversión</li>
-                <li><b>B2C:</b> Mayor volumen, conversiones rápidas</li>
-                <li>ROI diferenciado por segmento</li>
-                <li>Estrategias específicas según audiencia</li>
-                </ul>
+            <ul>
+            <li><b>B2B:</b> Ciclos largos, mayor valor por conversión</li>
+            <li><b>B2C:</b> Mayor volumen, conversiones rápidas</li>
+            <li>ROI diferenciado por segmento</li>
+            <li>Estrategias específicas según audiencia</li>
+            </ul>
             </li>
             </ul>
         </div>
         <br>
-        <div style="background-color:#f8f9fa; padding:1em; border-radius:8px;">
+        <div style="background-color:#222; padding:1em; border-radius:8px; color:#fff;">
             <h4 style="color:#AB63FA;">💡 INSIGHTS CRÍTICOS</h4>
             <ul>
             <li>No linealidad entre inversión y retorno: <b>Punto de saturación</b> en ciertas campañas</li>
@@ -989,37 +989,37 @@ if df is not None and not df.empty:
             </ul>
         </div>
         <br>
-        <div style="background-color:#f0f4fa; padding:1em; border-radius:8px;">
+        <div style="background-color:#111; padding:1em; border-radius:8px; color:#fff;">
             <h4 style="color:#FFA15A;">🚀 RECOMENDACIONES ESTRATÉGICAS</h4>
             <ul>
             <li><b>Corto plazo (1-3 meses):</b>
-                <ul>
-                <li>Reclasificación de campañas <i>Desconocido</i></li>
-                <li>Mejor tracking para canal <i>Unknown</i></li>
-                <li>Análisis profundo de campañas <b>outlier</b> de julio 2023</li>
-                <li>Optimización presupuestaria hacia canales de mayor ROI</li>
-                </ul>
+            <ul>
+            <li>Reclasificación de campañas <i>Desconocido</i></li>
+            <li>Mejor tracking para canal <i>Unknown</i></li>
+            <li>Análisis profundo de campañas <b>outlier</b> de julio 2023</li>
+            <li>Optimización presupuestaria hacia canales de mayor ROI</li>
+            </ul>
             </li>
             <li><b>Mediano plazo (3-6 meses):</b>
-                <ul>
-                <li>Rebalanceo de portfolio de tipos de campaña</li>
-                <li>Estrategias diferenciadas <b>B2B</b> vs <b>B2C</b></li>
-                <li>Modelo predictivo para campañas de alto potencial</li>
-                <li>Dashboard en tiempo real para decisiones ágiles</li>
-                </ul>
+            <ul>
+            <li>Rebalanceo de portfolio de tipos de campaña</li>
+            <li>Estrategias diferenciadas <b>B2B</b> vs <b>B2C</b></li>
+            <li>Modelo predictivo para campañas de alto potencial</li>
+            <li>Dashboard en tiempo real para decisiones ágiles</li>
+            </ul>
             </li>
             <li><b>Largo plazo (6-12 meses):</b>
-                <ul>
-                <li>Integración de datos de múltiples fuentes</li>
-                <li>Automatización de optimización presupuestaria</li>
-                <li>Desarrollo de benchmarks industriales</li>
-                <li>Implementación de testing A/B sistemático</li>
-                </ul>
+            <ul>
+            <li>Integración de datos de múltiples fuentes</li>
+            <li>Automatización de optimización presupuestaria</li>
+            <li>Desarrollo de benchmarks industriales</li>
+            <li>Implementación de testing A/B sistemático</li>
+            </ul>
             </li>
             </ul>
         </div>
         <br>
-        <div style="background-color:#f8f9fa; padding:1em; border-radius:8px;">
+        <div style="background-color:#222; padding:1em; border-radius:8px; color:#fff;">
             <h4 style="color:#636EFA;">📏 MÉTRICAS DE SEGUIMIENTO</h4>
             <ul>
             <li>ROI promedio por tipo de campaña</li>
@@ -1027,17 +1027,17 @@ if df is not None and not df.empty:
             <li>Beneficio neto mensual</li>
             <li>Eficiencia presupuestaria</li>
             <li><b>Indicadores de alerta:</b>
-                <ul>
-                <li>Campañas con ROI &lt; 1.0</li>
-                <li>Canales con tendencia decreciente en conversión</li>
-                <li>Desbalance presupuestario &gt; 70% en un solo canal</li>
-                <li>Campañas sin clasificación &gt; 5% del total</li>
-                </ul>
+            <ul>
+            <li>Campañas con ROI &lt; 1.0</li>
+            <li>Canales con tendencia decreciente en conversión</li>
+            <li>Desbalance presupuestario &gt; 70% en un solo canal</li>
+            <li>Campañas sin clasificación &gt; 5% del total</li>
+            </ul>
             </li>
             </ul>
         </div>
         <br>
-        <div style="background-color:#f0f4fa; padding:1em; border-radius:8px;">
+        <div style="background-color:#111; padding:1em; border-radius:8px; color:#fff;">
             <h4 style="color:#00CC96;">🛠️ PRÓXIMOS PASOS</h4>
             <ul>
             <li>Sesión de <b>deep-dive</b> en campañas de alto rendimiento</li>
