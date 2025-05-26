@@ -413,22 +413,22 @@ if df is not None and not df.empty:
             "KPIs",
         ])
         with camp_tab1:
-            st.subheader("Relación entre gasto y ganancia por canal y tipo de campaña")
+            st.subheader("Gasto por tipo de campaña")
             col1, col2 = st.columns(2)
             with col1:
                 porcentaje_gasto = (
                     df.groupby('channel')['budget'].sum().reset_index(name='Gasto')
                 )
-                porcentaje_gasto['Porcentaje de Gasto'] = 100 * porcentaje_gasto['Gasto'] / porcentaje_gasto['Gasto'].sum()
-                porcentaje_gasto = porcentaje_gasto.rename(columns={'channel': 'Canal'})
+                porcentaje_gasto_campaña['Porcentaje de Gasto'] = 100 * porcentaje_gasto['Gasto'] / porcentaje_gasto['Gasto'].sum()
+                porcentaje_gasto_campaña = porcentaje_gasto.rename(columns={'type': 'Campaña'})
 
                 fig_gasto_campaña = px.pie(
                     porcentaje_gasto,
                     values='Porcentaje de Gasto',
-                    names='Canal',
-                    title='Distribución del gasto por canal',
-                    color='Canal',
-                    color_discrete_map=colores_canales
+                    names='Tipo de campaña',
+                    title='Distribución del gasto por campaña',
+                    color='campaña',
+                    color_discrete_map=colores_campañas
                 )
                 fig_gasto_campaña.update_traces(textposition='inside', textinfo='percent+label')
                 fig_gasto_campaña.update_layout(
@@ -902,8 +902,8 @@ if df is not None and not df.empty:
     #------------------ 6. Conclusiones -----------------
     with pestañas_principales[5]:
         st.markdown("""
-        <h2 style="color:#fff;">📊 CONCLUSIONES EJECUTIVAS Y RECOMENDACIONES ESTRATÉGICAS</h2>
-        <h4 style="color:#fff;">ANÁLISIS BIANUAL DE CAMPAÑAS DE MARKETING</h4>
+        <h2 style="color:#000;">📊 CONCLUSIONES EJECUTIVAS Y RECOMENDACIONES ESTRATÉGICAS</h2>
+        <h4 style="color:#000;">ANÁLISIS BIANUAL DE CAMPAÑAS DE MARKETING</h4>
         <hr>
         <div style="background-color:#111; padding:1em; border-radius:8px; color:#fff;">
             <h4 style="color:#00CC96;">🔎 RESUMEN EJECUTIVO</h4>
