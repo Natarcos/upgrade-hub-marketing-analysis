@@ -414,6 +414,7 @@ if df is not None and not df.empty:
         ])
         with camp_tab1:
             col1, col2 = st.columns(2)
+            st.subheader("Relación entre gasto y ganancia por tipo de campaña")
             with col1:
                 st.subheader("Gasto por campaña")
                 # Calcular porcentaje de gasto por tipo de campaña
@@ -436,7 +437,6 @@ if df is not None and not df.empty:
                 st.plotly_chart(fig_gasto_campaña, use_container_width=True)
 
             with col2:
-                st.subheader("Ganancia por campaña")
                 porcentaje_ganancia_campaña = (
                     df.groupby('type')['revenue'].sum().reset_index(name='Ganancia')
                 )
@@ -459,7 +459,7 @@ if df is not None and not df.empty:
                 st.plotly_chart(fig_ganancia_campaña, use_container_width=True)
 
             st.markdown("---")
-            st.subheader("Relación entre gasto y ganancia por tipo de campaña")
+            st.subheader("Gasto y ganancia por tipo de campaña")
             fig_gasto_ganancia_campaña = px.scatter(
                 df,
                 x="budget",
