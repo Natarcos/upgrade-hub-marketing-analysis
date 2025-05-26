@@ -200,11 +200,11 @@ if df is not None and not df.empty:
                 color_discrete_map=colores_canales
             )
             fig_gasto.update_layout(
-            margin=dict(l=40, r=20, t=20, b=40),
-            legend_title_text='Canal',
-            font=dict(size=13),
-            title_font=dict(size=16),
-            title_x=0.0  # Centrar el título
+                margin=dict(l=40, r=20, t=20, b=40),
+                legend_title_text='Canal',
+                font=dict(size=13),
+                title_font=dict(size=16),
+                title_x=0.0  # Centrar el título
             )
             st.plotly_chart(fig_gasto, use_container_width=True)
 
@@ -360,7 +360,7 @@ if df is not None and not df.empty:
         st.subheader("Campañas destacadas en julio 2023")    
         #encontrar campañas realizadas en julio
         if df is not None:
-        # Asegurarse de que 'start_date' es de tipo string antes de usar .str
+            # Asegurarse de que 'start_date' es de tipo string antes de usar .str
             if df['start_date'].dtype == 'object':
                 campañas_julio = df[df['start_date'].str.contains('2023-07', na=False)]
             else:
@@ -413,32 +413,30 @@ if df is not None and not df.empty:
             "KPIs",
         ])
         with camp_tab1:
-            st.subheader("Gasto por tipo de campaña")
             col1, col2 = st.columns(2)
             with col1:
-                porcentaje_gasto = (
-                    df.groupby('channel')['budget'].sum().reset_index(name='Gasto')
+                st.subheader("Gasto por tipo de campaña")
+                # Calcular porcentaje de gasto por tipo de campaña
+                porcentaje_gasto_campañas = (
+                    df.groupby('type')['budget'].sum().reset_index(name='Gasto')
                 )
-                porcentaje_gasto_campaña['Porcentaje de Gasto'] = 100 * porcentaje_gasto['Gasto'] / porcentaje_gasto['Gasto'].sum()
-                porcentaje_gasto_campaña = porcentaje_gasto.rename(columns={'type': 'Campaña'})
+                porcentaje_gasto_campañas['Porcentaje de Gasto'] = 100 * porcentaje_gasto_campañas['Gasto'] / porcentaje_gasto_campañas['Gasto'].sum()
+                porcentaje_gasto_campañas = porcentaje_gasto_campañas.rename(columns={'type': 'Tipo de Campaña'})
 
                 fig_gasto_campaña = px.pie(
-                    porcentaje_gasto,
+                    porcentaje_gasto_campañas,
                     values='Porcentaje de Gasto',
-                    names='Tipo de campaña',
-                    title='Distribución del gasto por campaña',
-                    color='campaña',
+                    names='Tipo de Campaña',
+                    title='Distribución de la Gasto por Tipo de campaña',
+                    color='Tipo de Campaña',
                     color_discrete_map=colores_campañas
                 )
                 fig_gasto_campaña.update_traces(textposition='inside', textinfo='percent+label')
-                fig_gasto_campaña.update_layout(
-                    margin=dict(l=20, r=20, t=40, b=20),
-                    title_x=0.0,
-                    font=dict(size=13)
-                )
+                fig_gasto_campaña.update_layout(title_text='Distribución de la Gasto por Tipo campaña', title_x=0.5)
                 st.plotly_chart(fig_gasto_campaña, use_container_width=True)
 
             with col2:
+                st.subheader("Ganancia por tipo de campaña")
                 porcentaje_ganancia_campaña = (
                     df.groupby('type')['revenue'].sum().reset_index(name='Ganancia')
                 )
